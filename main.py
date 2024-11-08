@@ -1,24 +1,29 @@
 import random
 
 def draw_circle():
-    circle = ('    -----    ','\n  /       \  ','\n |         | ','\n  \       /  ','\n    -----    ')
-    print (circle)
+    print ('    -----    ','\n  /       \  ','\n |         | ','\n  \       /  ','\n    -----    ')
     
 def draw_lines():
     draw_character = input('Enter characters you want to repeat:')
     repeat_character = input('Please enter a number on how many times do you want to repeat the characters in one line:')
-    while not repeat_character.isdigit and repeat_character < 0:
+    while not repeat_character.isdigit() or int(repeat_character) <= 0:
         repeat_character = input('Please enter a number on how many times do you want to repeat the characters in one line:')
+    repeat_character = int(repeat_character)
     line_amount = input('Enter the number amount of lines you want to draw:')
-    while not line_amount.isdigit and line_amount < 0:
+    while not line_amount.isdigit() or int(line_amount) <= 0:
         line_amount = input('Enter the number amount of lines you want to draw:')
+    line_amount = int(line_amount)
     for _ in range(line_amount):
         print(draw_character * repeat_character)
         
 def draw_random():
     num = random.randint(1,3)
-    if num = 1:
-        print('^')
+    if num == 1:
+        print('  ^--^','\n (., .)','\n (>  <)','\n_l    l_')
+    elif num == 2:
+        print('  n___n','\n (o - o)','\n/|     |\\','\n |__ __|','\n/       \\')
+    elif num == 3:
+        print('  n___n','\n (o - o)','\n/|     |\=)=====>','\n |__ __|','\n/       \\')
     
     
 def main():
@@ -30,10 +35,9 @@ def main():
     print('Choosing 3 draws a random desgin out of three random designs.')
     print('Choosing 4 exits the code.')
     
-    while exit != 4
-    
+    while exit != 4:
         draw_choice = input('Enter your choice of drawing you want to see:')
-        while not draw_choice.isdigit and not (0 < draw_choice <= 4)
+        while not draw_choice.isdigit and not (0 < draw_choice <= 4):
             draw_choice = input('Enter your choice of drawing you want to see:')
 
         if draw_choice == '1':
@@ -48,6 +52,4 @@ def main():
 
 main()
     
-    
-    
-    # Code goes here and DO NOT FORGET INTRO COMMENTS
+
